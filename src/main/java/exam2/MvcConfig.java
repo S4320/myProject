@@ -1,4 +1,4 @@
-//스프링MVC에 대한 기본 설정 클래스
+//스프링Web MVC 설정 클래스
 package exam2;
 
 import org.springframework.context.annotation.Configuration;
@@ -12,8 +12,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 // 클래스 기반의 설정은 xml(100여줄)과 다르게 어노테이션으로 한 줄로 해결.
 
 public class MvcConfig implements WebMvcConfigurer {
-//	WebMvcConfigurer가 가진 메서드는 모두 default메서드이다. 필요한 기능만 사용하면 됨.
-	
+//	WebMvcConfigurer가 가진 메서드는 모두 default메서드이다.
+//	오버라이딩을 하지 않으면 default메서드를 그대로 사용하고
+//	사용자는 필요한 기능만 추가하면 됨.
 	
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
@@ -29,3 +30,8 @@ public class MvcConfig implements WebMvcConfigurer {
 		// viewpath ~~ 와 동일한 역할
 	}
 }
+
+// 보통은 3개의 설정클래스 사용
+// MvcConfig.java
+// ControllerConfig.java
+// ModelConfig.java (모델을 관리하는 설정클래스)

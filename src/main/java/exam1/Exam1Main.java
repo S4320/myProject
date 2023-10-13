@@ -11,10 +11,18 @@ public class Exam1Main {
 		//설정파일의 종류 xml,그루비,자바 클래스 등
 		
 		// bean의 '1.이름, 2.타입'으로 컨테이너에서 가져와서 사용함.
-		Greeter g = context.getBean("greeter", Greeter.class);
+		Greeter g1 = context.getBean("greeter", Greeter.class);
+		Greeter g2 = context.getBean("greeter", Greeter.class);
 		
-		String msg = g.greet("손흥민");
-		System.out.println(msg);
+		if(g1 == g2) {
+			System.out.println("싱글턴 객체입니다!");
+		}
+		else {
+			System.out.println("두 객체는 서로 다른 객체입니다.");
+		}
+		
+//		String msg = g.greet("손흥민");
+//		System.out.println(msg);
 		
 		context.close();
 	}

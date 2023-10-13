@@ -18,6 +18,7 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<!-- // 스프링 웹 컨터이너의 클래스를 등록 -->
 		<!-- // 스프링 웹 컨테이너를 만들때 사용할 설정파일을 등록 -->
+<!-- 		스프링 컨테이너가 아닌 WAS(탐캣)에 로드되는 녀석 -->
 		<init-param>
 			<param-name>contextClass</param-name>
 			<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
@@ -28,14 +29,17 @@
 			<param-value>
 				exam2.MvcConfig
 				exam2.ControllerConfig
+<!-- 				exam2.Model.Config -->
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
+<!-- 		// 서블릿 등록 우선순위 -->
 	</servlet>
 	
 	<servlet-mapping>
 	<servlet-name>dispatcher</servlet-name>
-	<url-pattern>/exam2/*</url-pattern>
+	<url-pattern>/</url-pattern>
+<!-- 	현재 웹 어플리케이션의 전체를 대상으로 정해진 컨트롤러에 들어오는 요청(예시 @getMapping)만 처리함 -->
 	</servlet-mapping>
 	
 	<filter>
@@ -52,6 +56,7 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 <!-- 		이것을 등록하면 Encfilter가 더이상 존재할 필요가 없다. -->
+<!-- 한글 인코딩 문제 해결 -->
 	
 	</filter-mapping>
 
