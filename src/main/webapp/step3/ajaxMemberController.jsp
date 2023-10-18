@@ -1,7 +1,7 @@
 <%@ page contentType="application/json; charset=UTF-8" %>
 
 <jsp:useBean id="memberDAO" class="model.MemberDAO" />
-<jsp:useBean id="JsonMember" class="model.JsonMember" />
+<jsp:useBean id="jsonMember" class="model.JsonMember" />
 <!-- 매개변수가 없는 생성자로 만들었으므로 DO가 없음  -->
 <jsp:useBean id="memberDO" class="model.MemberDO" />
 <jsp:setProperty name="memberDO" property="*" />

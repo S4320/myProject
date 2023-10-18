@@ -5,8 +5,8 @@ let xhr = new XMLHttpRequest();
 function parseMembersJson(membersJsonStr) {
 	//	memberList 테이블의 내용을 채우는 함수
 	let members = JSON.parse(membersJsonStr);
-	let membersTr = '<tr> <th>번호</th> <th>아이디</th> <th>이름</th>' +
-		'<th>등록일</th> <th>회원정보수정</th> </tr>';
+	let membersTr = '<tr><th>번호</th><th>아이디</th><th>이름</th>' +
+		'<th>등록일</th><th>회원정보수정</th></tr>';
 
 	for (let i in members) {
 		membersTr += '<tr><td>' + ((i * 1) + 1) + '</td><td>' + members[i].id +
