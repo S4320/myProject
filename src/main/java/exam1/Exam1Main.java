@@ -21,7 +21,7 @@ public class Exam1Main {
 			System.out.println("두 객체는 서로 다른 객체입니다.");
 		}
 		
-//		String msg = g.greet("손흥민");
+//		String msg = g1.greet("손흥민");
 //		System.out.println(msg);
 		
 		context.close();

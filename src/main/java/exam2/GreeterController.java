@@ -14,11 +14,15 @@ public class GreeterController {
 
 	private Greeter greeter;
 
+	public GreeterController() {
+	}
+	
 	public GreeterController(Greeter greeter) {
 		this.greeter = greeter;
 	}
 
-	@GetMapping("/exam2/hello")		// http://localhost:8080/myProject/exam2/hello?name=손흥민
+	
+@GetMapping("/exam2/hello")		// http://localhost:8080/myProject/exam2/hello?guest=손흥민
 	//이 요청은 스프링MVC가 받아서 dispatch를 통해 전달.
 
 	public String hello(Model model, @RequestParam(value="guest", required=false) String guest) {
@@ -32,5 +36,7 @@ public class GreeterController {
 	}
 }
 
+// [request method]는 아래의 어노테이션을 사용
+//@GetMapping
 //@PostMapping
 //@RequestMapping
